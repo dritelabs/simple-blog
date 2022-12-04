@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package blog;
+
+import "post.proto";
+
+option go_package = "github.com/drite/simple-blog/proto";
+
+service Blog {
+  rpc CreatePost (post.CreatePostRequest) returns (post.PostResponse);
+  rpc GetPost (post.GetPostRequest) returns (post.PostResponse);
+  rpc ListPosts (post.ListPostsRequest) returns (post.ListPostsResponse);
+}

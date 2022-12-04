@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "build:proto": "./scripts/build-proto.sh"
+  },
+  "devDependencies": {
+    "@nuxtjs/apollo": "5.0.0-alpha.4",
+    "@types/google-protobuf": "^3.15.6",
+    "grpc-tools": "1.11.2",
+    "grpc_tools_node_protoc_ts": "^5.3.2",
+    "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.2.2",
+    "@as-integrations/h3": "^1.1.4",
+    "@grpc/grpc-js": "^1.7.3",
+    "google-protobuf": "^3.21.2",
+    "graphql": "^16.6.0",
+    "nexus": "^1.3.0"
+  }
+}
