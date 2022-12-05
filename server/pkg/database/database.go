@@ -1,16 +1,15 @@
 package database
 
 import (
+	"github.com/drite/simple-blog/pkg/config"
 	"github.com/rs/zerolog/log"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-func Init() (db *gorm.DB, err error) {
-	dsn := "host=localhost user=drite password=drite dbname=blog port=5432 sslmode=disable"
-
-	db, err = gorm.Open(postgres.Open(dsn))
+func Init(c config.Config) (db *gorm.DB, err error) {
+	db, err = gorm.Open(postgres.Open(c.DBSource))
 
 	if err != nil {
 		log.Fatal().Msg("failed to connect database")

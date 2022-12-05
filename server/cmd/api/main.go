@@ -30,7 +30,7 @@ func main() {
 
 	s := grpc.NewServer(grpcLogger)
 
-	db, err := database.Init()
+	db, err := database.Init(conf)
 
 	if err != nil {
 		log.Fatal().Err(err).Msg("Failed to connect database")

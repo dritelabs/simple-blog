@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_SOURCE=postgresql://drite:drite@postgres:5432/blog?sslmode=disable
+    networks:
+      - drite
+
+networks:
+  drite:
+    name: drite
+    external: true
